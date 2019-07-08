@@ -21,10 +21,12 @@
         My Rating
       </span>
       <star-rating
-        :rating="3"
+        :rating="rating"
+        @rating-selected="setRating"
         :increment="0.5"
         :star-size="20"
         active-color="#9c0000"
+        class="individual"
       >
       </star-rating>
     </div>
@@ -35,7 +37,23 @@
 export default {
   name: "SideBarItem",
   props: {
-    place: Object
+    place: Object,
+    rating: [Number, null]
+  },
+  setup(props, context) {
+    // const rating = value(3);
+    const setRating = e => {
+      console.log("set!");
+      context.emit("rating-selected", {
+        place: props.place.name,
+        rating: e
+      });
+      // rating.value = e
+    };
+
+    return {
+      setRating
+    };
   }
 };
 </script>
@@ -44,6 +62,11 @@ export default {
 .vue-star-rating {
   position: relative;
   margin: 0 auto;
+}
+.individual {
+  position: absolute;
+  left: 28px;
+  top: 20px;
 }
 .column {
   &-item {
@@ -54,6 +77,11 @@ export default {
     padding-bottom: 10px;
     &--title {
       margin: 0.25em;
+    }
+    &--indiv-rating {
+      position: relative;
+      height: 55px;
+      width: 100%;
     }
     &--universal-rating {
       padding: 0 12px 12px 12px;

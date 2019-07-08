@@ -82,6 +82,21 @@ export default {
       map.flyTo({ center: e.features[0].geometry.coordinates, speed: 2.0 });
       focused.value = e.features[0].properties.name;
     };
+    const getYelpData = () => {
+      axios
+        .get("/.netlify/functions/yelp-it", {
+          params: {
+            location: "boston, ma",
+            term: "lobster"
+          }
+        })
+        .then(async res => {
+          yelpData.value = res.data.results;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    };
     // const runnergeojson = value({
     //   "type":"Feature",
     //   "properties":{},
@@ -98,7 +113,7 @@ export default {
     // this.map.getSource('point').setData(waypoint)
     // }
     // })
-    onCreated(() => {
+    onCreated(async () => {
       // run this in a method //
       // fetch("https://gist.githubusercontent.com/shortdiv/97d74e464a8900853bc89048a8244c84/raw/e9bbb80410f798e82171dfdf453e232ef251a4fc/BostonMarathon_firstsegment.geojson")
       // .then(response => {
@@ -108,19 +123,7 @@ export default {
       //   route.value = data
       //   const { waypoint } = useWaypoint(data)
       // })
-      axios
-        .get("/.netlify/functions/yelp-it", {
-          params: {
-            location: "boston, ma",
-            term: "lobster"
-          }
-        })
-        .then(async res => {
-          yelpData.value = res.data.results;
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      getYelpData();
     });
     return {
       paint,

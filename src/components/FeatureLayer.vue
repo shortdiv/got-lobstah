@@ -30,7 +30,11 @@ export default {
     watch(
       () => props.focused,
       async val => {
-        props.mapContext.setFilter(props.mapId, ["==", "name", val]);
+        if (props.mapContext.getLayer(props.mapId)) {
+          props.mapContext.setFilter(props.mapId, ["==", "name", val]);
+        } else {
+          // props.mapContext.setLayoutProperty(props.mapId, 'visibility', 'none')
+        }
       }
     );
     onMounted(() => {
