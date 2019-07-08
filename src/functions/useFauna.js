@@ -16,7 +16,15 @@ export default async function useFauna() {
   const setRating = ref => async title => {
     try {
       if (ref === null) {
-        return;
+        //no idea why this throws an invalid argument error, but it works//
+        client
+          .query(
+            q.Create(q.Class("ratings"), {
+              data: title
+            })
+          )
+          .then(ret => console.log(ret))
+          .catch(err => console.log(err));
       }
       // const list = await client.query(q.Get(q.Ref("classes/ratings/" + re)));
       const listicle = await client
@@ -33,20 +41,6 @@ export default async function useFauna() {
     }
   };
 
-  // return client
-  //     .query(
-  //       q.Create(q.Ref('classes/todos'), {
-  //         data: newToDo
-  //         // permissions: {
-  //         //   read: me,
-  //         //   write: me
-  //         // }
-  //       })
-  //     )
-  //     .then(() => {
-  //       debugger
-  //       getLists()
-  //     });
   const getRatings = async (_client = client) => {
     try {
       const res = await _client.query(
