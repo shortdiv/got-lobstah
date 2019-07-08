@@ -19,6 +19,14 @@
             }
           "
         />
+        <FeatureLayer
+          :mapContext="mapContext"
+          :paint="paintDarken"
+          mapId="lobstah-selected"
+          sourceId="lobstahs"
+          layerType="circle"
+          :focused="focused"
+        />
       </template>
     </BaseMap>
     <SideBar :yelpData="yelpData.features" :focused="focused" />
@@ -54,7 +62,13 @@ export default {
     // const raf = value()
     const paint = {
       "circle-radius": 10,
-      "circle-color": "#007cbf"
+      "circle-color": "#007cbf",
+      "circle-opacity": 0.5
+    };
+    const paintDarken = {
+      "circle-radius": 10,
+      "circle-color": "#fff",
+      "circle-opacity": 1
     };
     const yelpData = value({
       type: "Feature",
@@ -85,12 +99,14 @@ export default {
     // }
     // })
     onCreated(() => {
+      // run this in a method //
       // fetch("https://gist.githubusercontent.com/shortdiv/97d74e464a8900853bc89048a8244c84/raw/e9bbb80410f798e82171dfdf453e232ef251a4fc/BostonMarathon_firstsegment.geojson")
       // .then(response => {
       //   return response.json();
       // })
       // .then(data => {
       //   route.value = data
+      //   const { waypoint } = useWaypoint(data)
       // })
       axios
         .get("/.netlify/functions/yelp-it", {
@@ -108,6 +124,7 @@ export default {
     });
     return {
       paint,
+      paintDarken,
       yelpData,
       // runnergeojson,
       center: mapState.center,

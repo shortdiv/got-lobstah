@@ -1,5 +1,5 @@
 <script>
-import { onMounted } from "vue-function-api";
+import { onMounted, watch } from "vue-function-api";
 
 export default {
   name: "FeatureLayer",
@@ -23,12 +23,18 @@ export default {
       type: Object,
       required: false,
       default: () => ({})
-    }
+    },
+    focused: String
   },
   setup(props, context) {
+    watch(
+      () => props.focused,
+      async val => {
+        props.mapContext.setFilter(props.mapId, ["==", "name", val]);
+      }
+    );
     onMounted(() => {
       if (props.img) {
-        debugger;
         const image = props.img;
         props.mapContext.loadImage(image, (err, img) => {
           props.mapContext.addImage(props.imgName, img);
