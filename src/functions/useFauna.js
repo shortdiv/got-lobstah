@@ -41,20 +41,39 @@ export default async function useFauna() {
     }
   };
 
-  const getRatings = async (_client = client) => {
+  const getRatings = async () => {
+    debugger;
     try {
-      const res = await _client.query(
-        q.Map(
-          q.Paginate(
-            q.Match(
-              // todo use lists_by_owner
-              // class list; returns all items in a class
-              q.Ref("indexes/all_ratings")
-            )
-          ),
-          ref => q.Get(ref)
+      const res = await client.query(
+        q.Map(q.Paginate(q.Match(q.Ref("indexes/all_ratings"))), ref =>
+          q.Get(ref)
         )
       );
+      // if (exists.data.length) {
+      // const res = await _client.query(
+      //   q.Map(
+      //     q.Paginate(
+      //       q.Match(
+      //         q.Ref("indexes/all_users" + id)
+      //       )
+      //     ),
+      //     ref => q.Get(ref)
+      //   )
+      // );
+      // return res.data
+      // } else {
+      //   //create//
+      //   const res = await _client.query(
+      //     q.Create(q.Class('users'), {
+      //       data: {
+      //         id: id,
+      //         places: []
+      //       }
+      //     })
+      //   )
+      //   debugger
+      //   return res.data
+      // }
       return res.data;
     } catch (err) {
       console.log(err);
