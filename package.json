@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "prebuild": "run-p 'buildYelp' 'buildFauna'",
-    "buildYelp": "cd functions/get-yelp && npm install",
+    "buildYelp": "cd functions/yelp-it && npm install",
     "buildFauna": "cd functions/fauna-user && npm install",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
