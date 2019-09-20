@@ -804,6 +804,16 @@
     error-stack-parser "^2.0.0"
     string-width "^2.0.0"
 
+"@tonybadguy/call-me-maybe@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@tonybadguy/call-me-maybe/-/call-me-maybe-2.1.1.tgz#0758e4528e76ab1e17aef08ff96ab3304afa001d"
+  integrity sha512-Gc7G5o5Wd5I0d3ohzoZmqb1Jowr8sGURcFmGsoqiPk2ydFjwtYXRQTb4eYoJ1dZqdBlQGHRmL5mmbiMm4Kl2/w==
+  dependencies:
+    caseless "^0.11.0"
+    error "^7.0.2"
+    small-request "^2.1.0"
+    string-template "^1.0.0"
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
@@ -2055,6 +2065,11 @@ case-sensitive-paths-webpack-plugin@^2.2.0:
   resolved "https://registry.yarnpkg.com/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.2.0.tgz#3371ef6365ef9c25fa4b81c16ace0e9c7dc58c3e"
   integrity sha512-u5ElzokS8A1pm9vM3/iDgTcI3xqHxuCao94Oz8etI3cf0Tio0p8izkDYbTIn09uP3yUUr6+veaE6IkjnTYS46g==
 
+caseless@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.11.0.tgz#715b96ea9841593cc33067923f5ec60ebda4f7d7"
+  integrity sha1-cVuW6phBWTzDMGeSP17GDr2k99c=
+
 caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
@@ -3213,6 +3228,13 @@ error-stack-parser@^2.0.0:
   integrity sha512-E1fPutRDdIj/hohG0UpT5mayXNCxXP9d+snxFsPU9X0XgccOumKraa3juDMwTUyi7+Bu5+mCGagjg4IYeNbOdw==
   dependencies:
     stackframe "^1.0.4"
+
+error@^7.0.2:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/error/-/error-7.2.0.tgz#80c989885635b41df9309d145834a4f125ae2245"
+  integrity sha512-M6t3j3Vt3uDicrViMP5fLq2AeADNrCVFD8Oj4Qt2MHsX0mPYG7D5XdnEfSdRpaHQzjAJ19wu+I1mw9rQYMTAPg==
+  dependencies:
+    string-template "~0.2.1"
 
 es-abstract@^1.12.0, es-abstract@^1.4.3, es-abstract@^1.5.1:
   version "1.13.0"
@@ -7506,6 +7528,13 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
+request-function@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/request-function/-/request-function-2.0.0.tgz#27aace27f871e3c2fd48a19dad75ca384c4b8654"
+  integrity sha1-J6rOJ/hx48L9SKGdrXXKOExLhlQ=
+  dependencies:
+    error "^7.0.2"
+
 request-promise-core@1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/request-promise-core/-/request-promise-core-1.1.2.tgz#339f6aababcafdb31c799ff158700336301d3346"
@@ -8025,6 +8054,13 @@ slice-ansi@^2.1.0:
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
 
+small-request@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/small-request/-/small-request-2.1.0.tgz#b1015a5047ca140b0a23ab2e0403bbe8d136beb3"
+  integrity sha512-tQlteNci7wsIsmt7KoyZj0izeuY718NBeKVhJdWxTmQHKsJp4INUhWLTJ000EzNu9p41TqbGPOrSl0wroK581Q==
+  dependencies:
+    request-function "^2.0.0"
+
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
@@ -8306,6 +8342,16 @@ string-argv@^0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.0.2.tgz#dac30408690c21f3c3630a3ff3a05877bdcbd736"
   integrity sha1-2sMECGkMIfPDYwo/86BYd73L1zY=
+
+string-template@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/string-template/-/string-template-1.0.0.tgz#9e9f2233dc00f218718ec379a28a5673ecca8b96"
+  integrity sha1-np8iM9wA8hhxjsN5oopWc+zKi5Y=
+
+string-template@~0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/string-template/-/string-template-0.2.1.tgz#42932e598a352d01fc22ec3367d9d84eec6c9add"
+  integrity sha1-QpMuWYo1LQH8IuwzZ9nYTuxsmt0=
 
 string-width@^1.0.1, string-width@^1.0.2:
   version "1.0.2"
@@ -9901,6 +9947,13 @@ yargs@^7.0.0:
     which-module "^1.0.0"
     y18n "^3.2.1"
     yargs-parser "^5.0.0"
+
+yelp-fusion@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/yelp-fusion/-/yelp-fusion-3.0.0.tgz#ae4d2b6b28072016ba18328a0aafc5b59692119f"
+  integrity sha512-Os4A0+v980W8sm4kurUpK4E0FMS5hvtA0//g7Jb9QI2gS7WfX/1Zw12S792LKt3YM/qJNow7XIR2g3bONlX/fg==
+  dependencies:
+    "@tonybadguy/call-me-maybe" "^2.1.1"
 
 yorkie@^2.0.0:
   version "2.0.0"
