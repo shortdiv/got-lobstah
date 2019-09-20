@@ -20,7 +20,8 @@
     "turf": "^3.0.14",
     "vue": "^2.6.10",
     "vue-function-api": "^2.0.6",
-    "vue-star-rating": "^1.6.1"
+    "vue-star-rating": "^1.6.1",
+    "yelp-fusion": "^3.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
