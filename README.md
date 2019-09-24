@@ -31,6 +31,7 @@ The second command opens a browser window where you can login or sign up for a n
 8. Add Netlify environment variables. Logged into your Netlify account, click on the site we just created, then click on "site settings", then under "Build and Deploy", go to "Environment variables". Add variables for the Yelp and Fauna API keys:
 
 YELP_API_KEY
+
 FAUNADB_SERVER_SECRET
 
 In the next two steps, we will get the values for these two keys.
