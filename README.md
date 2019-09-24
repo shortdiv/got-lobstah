@@ -32,26 +32,24 @@ The second command opens a browser window where you can login or sign up for a n
 
 YELP_API_KEY
 
-Feel free to use this value for the Yelp API key:
-
-E9ws6kbLaQqKYFbjcT67QKcGa97K6X4TQg5OQCV6LKsGksRIFuj9ueQg9BCHHIYy5bnTmXPgHaq60f2clOmebW_1p_342TY4Q92gLsw_k8W8joF39wGNhYb3SKOxWXYx
+9. To get the value for YELP_API_KEY, go to [the Yelp developer's site](https://www.yelp.com/developers) and click on Yelp Fusion. This will take you to the Yelp Fusion page, where you will create your API key. Click on Get Started, and Create an App. In the create new app form, you will be prompted for information about your app. Once you do this, agree to Yelp API Terms of Use and Display Requirements. Then click the Submit button. Congratulations, you now have an API key. Create a key called YELP_FUSION_API in the Netlify environment variables section and copy/paste the secret.
 
 Then create a variable for Fauna:
 
 FAUNADB_SERVER_SECRET
 
-9. To get the value for FAUNADB_SERVER_SECRET, go to dashboard.fauna.com, click on the database, then click on "Security" (in the left sidebar), then click "New key". Create a key and copy/paste the secret into the FAUNADB_SERVER_SECRET environment variable value in Netlify.
+10. To get the value for FAUNADB_SERVER_SECRET, go to dashboard.fauna.com, click on the database, then click on "Security" (in the left sidebar), then click "New key". Create a key and copy/paste the secret into the FAUNADB_SERVER_SECRET environment variable value in Netlify.
 
-10. In dashboard.fauna.com, click on "Collections" (in the left sidebar). Click "New collection" to create a new collection named "ratings" 
+11. In dashboard.fauna.com, click on "Collections" (in the left sidebar). Click "New collection" to create a new collection named "ratings" 
 
-11. Now we are ready to install and run our app locally:
+12. Now we are ready to install and run our app locally:
 
 ```
 yarn install
 netlify dev
 ```
 
-12. After it's running, go to localhost:8888. Try clicking on some stars to add a rating. You should see each rating saved as a new document in the "ratings" class in dashboard.fauna.com
+13. After it's running, go to localhost:8888. Try clicking on some stars to add a rating. You should see each rating saved as a new document in the "ratings" class in dashboard.fauna.com
 
 ## Other commands
 
